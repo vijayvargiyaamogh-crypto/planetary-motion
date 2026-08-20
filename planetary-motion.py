@@ -7,7 +7,7 @@ vx, vy = 0, 1 # Initial velocity components of the planet (horizontal and vertic
 GM = 1 # Same as gravitational constant times mass of star
 
 T = 8 # Time period of numerical simulation
-N = 256 # Number of timesteps in numerical simulation (can increase this parameter for more precision)
+N = 512 # Number of timesteps in numerical simulation (can increase this parameter for more precision)
 dt = T/N # Size of timestep
 
 positions = [(x, y)] # Array to which new coordinates will be appended every dt = T/N
@@ -25,6 +25,5 @@ for step in range(1, N+1):
 x_series, y_series = zip(*positions) # Separate x and y coordinates into two arrays for plotting
 
 plt.scatter(x_series, y_series) # Plots the position of the planet over time (dotted path)
+plt.axis('equal') # Makes x-scale and y-scale equal
 plt.show()
-        
-
